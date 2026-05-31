@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Birthday Invitation</title>
 
 <style>
@@ -11,24 +13,39 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#f5f0e8;
+    background:#f5f1e8;
+    overflow:hidden;
 }
 
-img{
-    width:400px;
+#envelope{
+    width:min(90vw,500px);
     cursor:pointer;
+    transition:1.5s;
+}
+
+.open{
+    transform:scale(1.3);
+    opacity:0;
 }
 </style>
-
 </head>
+
 <body>
 
-<img src="envelope.jpeg" onclick="openEnvelope()">
+<img src="envelope.jpeg" id="envelope">
 
 <script>
-function openEnvelope(){
-    window.location.href="code.html";
-}
+const envelope = document.getElementById("envelope");
+
+envelope.onclick = function(){
+
+    envelope.classList.add("open");
+
+    setTimeout(()=>{
+        window.location.href="code.html";
+    },1500);
+
+};
 </script>
 
 </body>
