@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Secret Code</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:url('background.jpeg');
+    background-size:cover;
+    background-position:center;
+}
+
+input{
+    width:180px;
+    padding:10px;
+    font-size:24px;
+    text-align:center;
+}
+
+button{
+    padding:10px 20px;
+    font-size:20px;
+    margin-left:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+    <input type="password" id="code" placeholder="14062005">
+    <button onclick="checkCode()">❤️</button>
+</div>
+
+<script>
+function checkCode(){
+    if(document.getElementById("code").value==="14062005"){
+        window.location.href="message.html";
+    }else{
+        alert("Wrong code");
+    }
+}
+</script>
+
+</body>
+</html>
